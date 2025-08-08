@@ -3,6 +3,8 @@
    <head>
     <base href="/public">
      @include('home.css')
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
      <style type="text/css">
       label{
          display: inline-block;
@@ -58,6 +60,17 @@
                   <h1 style="font-size: 40px !important;">
                      Book Room
                   </h1>
+
+                  <div>
+                  @if(session()->has('message'))
+                     <div class="alert alert-success">
+                     <button type="button" class="close" data-bs-dismiss="alert">X</button>
+                     {{session()->get('message')}}
+                     </div>
+
+                  @endif
+
+                  </div>
 
                   @if($errors)
 
@@ -165,5 +178,7 @@
 });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
    </body>
 </html>

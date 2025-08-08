@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 use App\Models\Room;
-
+use App\Models\Booking;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -139,6 +139,25 @@ class AdminController extends Controller
 
 
     }
+
+    public function bookings(){
+
+        $data=Booking::all();
+
+
+
+        return view('admin.booking',compact('data'));
+    }
+
+    public function delete_booking($id){
+
+        $data=Booking::find($id);
+
+        $data->delete();
+
+        return redirect()->back();
+    }
+
 
     
     
