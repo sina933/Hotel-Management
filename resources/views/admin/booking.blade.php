@@ -45,6 +45,7 @@
                     <th class="th_deg">Price</th>
                     <th class="th_deg">Image</th>
                     <th class="th_deg">Delete</th>
+                    <th class="th_deg">Status Update</th>
                 </tr>
 
                 @foreach($data as $data)
@@ -55,7 +56,24 @@
                     <td>{{$data->phone}}</td>
                     <td>{{$data->start_date}}</td>
                     <td>{{$data->end_date}}</td>
-                    <td>{{$data->status}}</td>
+                    <td>
+                        @if($data->status=='approve')
+                        <span style="color: skyblue;">Approve</span>
+
+                        @endif
+
+                        @if($data->status=='rejected')
+                        <span style="color: red;">Rejected</span>
+
+                        @endif
+
+                        @if($data->status=='waiting')
+                        <span style="color: yellow;">Waiting</span>
+
+                        @endif
+
+
+                    </td>
                     <td>{{$data->room->room_title}}</td>
                     <td>{{$data->room->price}}</td>
                     <td>
@@ -67,6 +85,18 @@
 
                         </a>
                     </td>
+                    <td>
+                        <span style="padding-bottom:10px;">
+                        <a class="btn btn-success" href="{{url('approve_book',$data->id)}}">
+                            Approve
+                        </a>
+                       
+                        </span>
+                        <a class="btn btn-warning" href="{{url('reject_book',$data->id)}}">
+                            Rejected
+                        </a>
+                    </td>
+                    
                 </tr>
                 @endforeach
                     
