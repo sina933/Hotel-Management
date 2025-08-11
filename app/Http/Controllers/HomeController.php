@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Booking;
 
 use App\Models\Room;
+
+use App\Models\Contact;
 class HomeController extends Controller
 {
     public function room_details($id){
@@ -52,12 +54,28 @@ class HomeController extends Controller
 
         }
 
-        
-        
+    }
 
-        
 
+    public function contact(Request $request){
+
+        $contact=new Contact;
+
+        $contact->name=$request->name;
+        $contact->email=$request->email;
+        $contact->phone=$request->phone;
+        $contact->message=$request->message;
+
+        $contact->save();
+
+        return redirect()->back()->with('message','Message Sent Successfully');
 
 
     }
+
+
+   
+
+
+
 }

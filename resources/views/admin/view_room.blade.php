@@ -49,7 +49,7 @@
 
                     <td>{{$data->room_title}}</td>
                     <td>{{$data->description}}</td>
-                    <td>{{$data->price}}$</td>
+                    <td>{{$data->price}}</td>
                     <td>{{$data->wifi}}</td>
                     <td>{{$data->room_type}}</td>
                     <td> <img width="100" src="room/{{$data->image}}"></td>
