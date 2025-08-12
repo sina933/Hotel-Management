@@ -24,7 +24,8 @@ Database: MySQL
 
 Authentication: JetStream
 
-Usage
+Usage:
+
 Admin can log in and manage rooms, reservations, and customers.
 
 Staff can view reservations and update check-in/check-out statuses.
