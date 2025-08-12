@@ -8,6 +8,8 @@ use App\Models\Booking;
 use App\Models\Room;
 
 use App\Models\Contact;
+use App\Models\Gallery;
+
 class HomeController extends Controller
 {
     public function room_details($id){
@@ -71,6 +73,26 @@ class HomeController extends Controller
         return redirect()->back()->with('message','Message Sent Successfully');
 
 
+    }
+
+    public function our_rooms(){
+
+        $room=Room::all();
+
+        return view('home.our_rooms',compact('room'));
+    }
+
+    public function hotel_gallery(){
+
+        $gallery=Gallery::all();
+
+
+        return view('home.hotel_gallery',compact('gallery'));
+    }
+
+    public function contact_us(){
+
+        return view('home.contact_us');
     }
 
 
