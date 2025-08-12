@@ -1,6 +1,8 @@
 Hotel Management System
 A Hotel Management System built with Laravel to manage hotel reservations, rooms, and customer data efficiently. This project provides a complete solution for handling bookings, managing rooms, and storing customer information in a user-friendly way.
-Features
+
+Features:
+
 Room Management – Add, edit, and delete room details with descriptions and images.
 
 Reservation System – Book rooms, check availability, and manage check-ins/check-outs.
@@ -13,7 +15,7 @@ Authentication – Role-based login system for administrators and staff.
 
 Responsive Design – Works seamlessly on desktop and mobile devices.
 
-Tech Stack
+Tech:
 Backend: Laravel (PHP Framework)
 
 Frontend: Blade Templates, Bootstrap,
